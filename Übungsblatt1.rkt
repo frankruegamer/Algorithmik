@@ -1,14 +1,19 @@
 #lang racket
 ; Aufgabe 1
 (define x (- (/ (+ 9 6) (* (- 3 1) 5)) (* (- (/ 7 8) 2) 4)))
+
 ; Aufgabe 2
 (define (g u v w) (+ (/ (- v (* 7 u)) (- u w)) (/ (+ u v) (- (* w 6) v))))
+
 ; Aufgabe 3
 (define (my-max x y) (cond ((> x y) x) (else y)))
+
 ; Aufgabe 4
 (define (groesser-zehn? x) (> x 10))
+
 ; Aufgabe 5
 (define (groesserp? x y z) (> (+ x y) z))
+
 ; Aufgabe 6
 (define (quadrat x) (* x x))
 (define (squared-max1 x y z)
