@@ -1,5 +1,5 @@
 #lang racket
-; T1.G1.A1
+; Aufgabe 1
 (define (note vortrag hausarbeit kolloqium)
   (define (verhaeltnis)
     (/ (+ vortrag hausarbeit (* 2 kolloqium)) 4))
@@ -17,5 +17,14 @@
           (else 1.0)))
   (runden (verhaeltnis)))
 
+; Aufgabe 2
 (define (anzahl a b c)
-  
+  (if (= a 0) #f
+      (let ((diskriminante (- (expt b 2) (* 4 a c))))
+        (cond ((> diskriminante 0) 2)
+              ((= diskriminante 0) 1)
+              (else 0)))))
+
+; Aufgabe 3
+(define (f a b c d e)
+  (or (and a b d e) (not (or (and c a d) (not (and (and (or a e) (not (and a e))) c))))))
