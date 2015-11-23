@@ -27,4 +27,6 @@
 
 ; Aufgabe 3
 (define (f a b c d e)
-  (or (and a b d e) (not (or (and c a d) (not (and (and (or a e) (not (and a e))) c))))))
+  (or (and a b d e)
+      (not (or (and c a d)
+               (not (and (and (or a e) (not (and a e))) c))))))
