@@ -6,7 +6,10 @@
 
 ; Aufgabe 34
 (define (drehe liste)
-  (reverse liste))
+  (define (liste-iter old new)
+    (if (null? old) new
+        (liste-iter (drop-right old 1) (append new (list (last old))))))
+  (liste-iter liste '()))
 
 ; Aufgabe 35
 (define (typ-or typ1 typ2)
