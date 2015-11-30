@@ -8,7 +8,7 @@
 (define (drehe liste)
   (define (liste-iter old new)
     (if (null? old) new
-        (liste-iter (drop-right old 1) (append new (list (last old))))))
+        (liste-iter (drop-right old 1) (append new (last-pair old)))))
   (liste-iter liste '()))
 
 ; Aufgabe 35
