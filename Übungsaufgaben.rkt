@@ -17,7 +17,7 @@
           ((= (car l) b) (scan-list (cdr l) #t))
           (bool (car l))
           (else (scan-list (cdr l) #f))))
-  (scan-list (make-listr a) #f))
+  (scan-list (make-listr (abs a)) #f))
 
 ; Sommersemester 2013
 ; Aufgabe T2.G1.A1
@@ -34,7 +34,7 @@
     (if (= n 0) 0
         (+ (remainder n 10) (quersumme (quotient n 10)))))
   (if (= (quotient zahl 10) 0) zahl
-      (einstellige-quersumme (quersumme zahl))))
+      (einstellige-quersumme (quersumme (abs zahl)))))
 
 ; Sommersemester 2014
 ; Aufgabe T2.G1.A1
@@ -43,7 +43,7 @@
     (if (= n 0) 0
         (+ (if (praedikat (remainder n 10)) 0 1) (zaehle-ziffern (quotient n 10)))))
   (if (> start ende) 0
-      (+ (zaehle-ziffern start) (zaehle (+ start 1) ende praedikat))))
+      (+ (zaehle-ziffern (abs start)) (zaehle (+ start 1) ende praedikat))))
 
 ; Aufgabe T2.G1.A2
 (define (r n a)
