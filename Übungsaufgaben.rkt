@@ -25,7 +25,7 @@
   (define (iter-n n ex)
     (if (= n 0) 0
         (+ (* (expt 10 ex) (remainder (remainder n 10) teiler)) (iter-n (quotient n 10) (+ ex 1)))))
-  (if (or (< zahl 0) (not (<= 0 teiler 10))) -1
+  (if (or (< zahl 0) (not (< 0 teiler 11))) -1
       (iter-n zahl 0)))
 
 ; Aufgabe T2.G1.A2
