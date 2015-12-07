@@ -19,5 +19,5 @@
 
 ; Aufgabe 40
 (define (loeschen liste n)
-    (if (or (null? liste) (= n 0)) liste
-        (loeschen (cdr liste) (- n 1))))
+  (if (or (null? liste) (= n 0)) liste
+      (loeschen (cdr liste) (- n 1))))
