@@ -1,13 +1,13 @@
 #lang racket
 ; Aufgabe 49
 (define (werte-aus term zuweisung)
-  (define op (case (car term) ('+ +) ('- -) ('* *) ('/ /)))
-  (define (eval symbol)
+  (define op (eval (car term)))
+  (define (alloc symbol)
     (if (integer? symbol) symbol
         (for/first [(l zuweisung)
                     #:when (equal? symbol (car l))]
           (cadr l))))
-  (op (eval (cadr term)) (eval (caddr term))))
+  (op (alloc (cadr term)) (alloc (caddr term))))
 
 ; Aufgabe 50
 (define (deep-memq symbol liste)
