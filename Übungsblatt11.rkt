@@ -3,7 +3,7 @@
 (define (werte-aus term zuweisung)
   (define op (eval (car term)))
   (define (alloc symbol)
-    (if (integer? symbol) symbol
+    (if (number? symbol) symbol
         (cadr (assq symbol zuweisung))))
   (op (alloc (cadr term)) (alloc (caddr term))))
 
