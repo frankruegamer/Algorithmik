@@ -4,9 +4,7 @@
   (define op (eval (car term)))
   (define (alloc symbol)
     (if (integer? symbol) symbol
-        (for/first [(l zuweisung)
-                    #:when (equal? symbol (car l))]
-          (cadr l))))
+        (cadr (assq symbol zuweisung))))
   (op (alloc (cadr term)) (alloc (caddr term))))
 
 ; Aufgabe 50
